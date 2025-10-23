@@ -9,7 +9,7 @@ from livekit.plugins.turn_detector.multilingual import MultilingualModel
 load_dotenv(".env")
 
 # FastAPI backend base URL
-BACKEND_URL = "http://localhost:8000/api"  # Adjust if your backend runs on different port
+BACKEND_URL = "http://localhost:8000/api"  
 
 
 class KnowledgeBaseAssistant(Agent):

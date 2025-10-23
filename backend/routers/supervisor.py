@@ -1,4 +1,4 @@
-# routers/supervisor.py
+
 from fastapi import APIRouter
 from pydantic import BaseModel
 from services.firebase_service import db
@@ -64,7 +64,7 @@ def supervisor_response(data: SupervisorResponseModel):
         "id": data.request_id,
         "question": data.question,
         "answer": data.answer,
-        "customerId": "",  # Include customerId if available, else set empty or get from request
+        "customerId": "",  
         "request_id": data.request_id,
         "status": "resolved",
         "timestamp": datetime.now()

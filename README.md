@@ -23,7 +23,7 @@ React.js – Supervisor admin panel (pending/resolved requests, learned answers)
 
 Python – Backend agent logic & LiveKit integration.
 
-Gemini / HuggingFace / TTS – For AI response generation and speech synthesis.
+Openai – For AI response generation and speech synthesis.
 
 🧩 Core Features
 
@@ -37,9 +37,6 @@ Gemini / HuggingFace / TTS – For AI response generation and speech synthesis.
 
 🔁 Lifecycle Management – Pending → Resolved / Unresolved states.
 
-⚡ Auto-Follow-up – AI texts or logs responses back once resolved.
-
-🏗️ System Architecture
 
 Agent Layer – Built using LiveKit SDK + Python.
 
@@ -47,11 +44,11 @@ Database Layer – Firestore collections for help_requests and knowledge_base.
 
 UI Layer – React admin interface for supervisors.
 
-Integration Layer – Webhooks/console logs simulate communication loops.
+Integration Layer – Livekit simulate communication loops.
 
 🧠 Design Highlights
 
-Modular and scalable design to support future live transfer (Phase 2).
+Modular and scalable design to support future live transfer .
 
 Graceful timeout handling for supervisor unresponsiveness.
 

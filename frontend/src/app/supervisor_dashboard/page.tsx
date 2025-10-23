@@ -9,20 +9,20 @@ import {
   AlertCircle,
   Book,
   History,
-} from "lucide-react";            // IGNORE ALL THE ERROR SAB TYPE CASTING KE HAI 
+} from "lucide-react";            
 
 export default function SupervisorDashboard() {
-  const [activeTab, setActiveTab] = useState('pending'); // Added active tab state
-  const [pendingRequests, setPendingRequests] = useState([]); // Loaded from API
-  const [history, setHistory] = useState([]); // Added history state
-  const [knowledgeBase, setKnowledgeBase] = useState([]); // Added knowledge base state
-  const [selectedRequest, setSelectedRequest] = useState(null); // For modal selection
-  const [supervisorAnswer, setSupervisorAnswer] = useState(''); // For modal answer input
-  const [question, setQuestion] = useState(""); // Input for creating new request
+  const [activeTab, setActiveTab] = useState('pending'); 
+  const [pendingRequests, setPendingRequests] = useState([]); 
+  const [history, setHistory] = useState([]); 
+  const [knowledgeBase, setKnowledgeBase] = useState([]); 
+  const [selectedRequest, setSelectedRequest] = useState(null); 
+  const [supervisorAnswer, setSupervisorAnswer] = useState('');
+  const [question, setQuestion] = useState(""); 
 
   const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
 
-  // Load all datasets on mount
+ 
   useEffect(() => {
     fetchAllData();
   }, []);
@@ -47,13 +47,13 @@ export default function SupervisorDashboard() {
     const id = Math.random().toString(36).substring(2, 12); // Simple unique id
     await axios.post(`${BASE_URL}/help_requests`, { question, request_id: id });
     setQuestion("");
-    fetchAllData();  // Refresh all data after creation
+    fetchAllData(); 
   };
 
   // When Respond button is clicked in Pending tab
   const handleRespond = (request) => {
-    setSelectedRequest(request); // Open modal with request data
-    setSupervisorAnswer(''); // Reset answer input
+    setSelectedRequest(request); 
+    setSupervisorAnswer(''); 
   };
 
   // Handle submitting answer through modal; status is 'resolved' or 'unresolved'
@@ -67,7 +67,7 @@ export default function SupervisorDashboard() {
         answer: supervisorAnswer,
         question: selectedRequest.question,
         request_id: selectedRequest.request_id,
-        status, // Include status for backend handling
+        status, 
       });
 
       // If resolved and answer present, update knowledge base endpoint accordingly
@@ -79,16 +79,16 @@ export default function SupervisorDashboard() {
         });
       }
 
-      fetchAllData(); // Refresh all data after response
+      fetchAllData(); 
     } catch (error) {
       console.error("Error submitting response:", error);
     }
 
-    setSelectedRequest(null); // Close modal
+    setSelectedRequest(null); 
     setSupervisorAnswer('');
   };
 
-  // Format time difference e.g. '5m ago', 'Just now'
+  
   const getTimeRemaining = (timestamp) => {
     if (!timestamp) return '';
     const now = new Date();
