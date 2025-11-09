@@ -1,103 +1,141 @@
-aiofiles==25.1.0
-aiohappyeyeballs==2.6.1
-aiohttp==3.13.1
-aiosignal==1.4.0
-annotated-types==0.7.0
-anyio==4.11.0
-attrs==25.4.0
-av==15.1.0
-CacheControl==0.14.3
-cachetools==6.2.1
-certifi==2025.10.5
-cffi==2.0.0
-charset-normalizer==3.4.4
-click==8.3.0
-colorama==0.4.6
-coloredlogs==15.0.1
-cryptography==46.0.3
-distro==1.9.0
-docstring_parser==0.17.0
-eval_type_backport==0.2.2
-filelock==3.20.0
-firebase_admin==7.1.0
-flatbuffers==25.9.23
-frozenlist==1.8.0
-fsspec==2025.9.0
-google-api-core==2.27.0
-google-auth==2.41.1
-google-cloud-core==2.4.3
-google-cloud-firestore==2.21.0
-google-cloud-storage==3.4.1
-google-crc32c==1.7.1
-google-resumable-media==2.7.2
-googleapis-common-protos==1.71.0
-grpcio==1.76.0
-grpcio-status==1.76.0
-h11==0.16.0
-h2==4.3.0
-hpack==4.1.0
-httpcore==1.0.9
-httpx==0.28.1
-huggingface-hub==0.35.3
-humanfriendly==10.0
-hyperframe==6.1.0
-idna==3.11
-importlib_metadata==8.7.0
-Jinja2==3.1.6
-jiter==0.11.1
-livekit==1.0.17
-livekit-agents==1.2.15
-livekit-api==1.0.7
-livekit-blingfire==1.0.0
-livekit-plugins-noise-cancellation==0.2.5
-livekit-plugins-silero==1.2.15
-livekit-plugins-turn-detector==1.2.15
-livekit-protocol==1.0.8
-MarkupSafe==3.0.3
-mpmath==1.3.0
-msgpack==1.1.2
-multidict==6.7.0
-nest-asyncio==1.6.0
-numpy==2.3.4
-onnxruntime==1.23.2
-openai==2.6.0
-opentelemetry-api==1.38.0
-opentelemetry-exporter-otlp==1.38.0
-opentelemetry-exporter-otlp-proto-common==1.38.0
-opentelemetry-exporter-otlp-proto-grpc==1.38.0
-opentelemetry-exporter-otlp-proto-http==1.38.0
-opentelemetry-proto==1.38.0
-opentelemetry-sdk==1.38.0
-opentelemetry-semantic-conventions==0.59b0
-packaging==25.0
-prometheus_client==0.23.1
-propcache==0.4.1
-proto-plus==1.26.1
-protobuf==6.33.0
-psutil==7.1.1
-pyasn1==0.6.1
-pyasn1_modules==0.4.2
-pycparser==2.23
-pydantic==2.12.3
-pydantic_core==2.41.4
-PyJWT==2.10.1
-pyreadline3==3.5.4
-python-dotenv==1.1.1
-PyYAML==6.0.3
-regex==2025.10.23
-requests==2.32.5
-rsa==4.9.1
-safetensors==0.6.2
-sniffio==1.3.1
-sounddevice==0.5.3
-sympy==1.14.0
-tokenizers==0.22.1
-tqdm==4.67.1
-transformers==4.57.1
-types-protobuf==6.32.1.20250918
-typing-inspection==0.4.2
-typing_extensions==4.15.0
-urllib3==2.5.0
-watchfiles==1.1.1
-yarl==1.22.0
-zipp==3.23.0
+# ===========================
+# 🧠 CORE ASYNC & NETWORKING
+# ===========================
+aiofiles==25.1.0             # Asynchronous file handling
+aiohappyeyeballs==2.6.1      # Enhances async DNS/network performance
+aiohttp==3.13.1              # Async HTTP client/server framework
+aiosignal==1.4.0             # Helper for async signals/events
+anyio==4.11.0                # Async framework compatibility layer (trio/asyncio)
+attrs==25.4.0                # Simplifies class attribute definitions
+frozenlist==1.8.0            # Immutable list type used by aiohttp
+multidict==6.7.0             # Multi-value dict for HTTP headers
+yarl==1.22.0                 # URL parsing for aiohttp
+
+# ===========================
+# 💬 LIVEKIT REAL-TIME AGENT SETUP
+# ===========================
+livekit==1.0.17                               # Core LiveKit SDK (real-time audio/video)
+livekit-agents==1.2.15                        # Framework for building AI voice/video agents
+livekit-api==1.0.7                            # LiveKit REST API client
+livekit-blingfire==1.0.0                      # Tokenization plugin for speech/text
+livekit-plugins-noise-cancellation==0.2.5     # Removes background noise
+livekit-plugins-silero==1.2.15                # Silero-based voice enhancement/speech model
+livekit-plugins-turn-detector==1.2.15         # Detects when a person stops talking
+livekit-protocol==1.0.8                       # Protocol definitions for LiveKit
+
+# ===========================
+# 🔐 SECURITY & NETWORK UTILS
+# ===========================
+certifi==2025.10.5           # SSL certificates for secure HTTP
+cryptography==46.0.3         # Encryption & decryption functions
+pyasn1==0.6.1                # ASN.1 protocol implementation
+pyasn1_modules==0.4.2        # ASN.1 modules for auth/cert handling
+rsa==4.9.1                   # RSA encryption library
+cffi==2.0.0                  # C bindings interface used by cryptography
+
+# ===========================
+# ☁️ GOOGLE CLOUD / FIREBASE INTEGRATION
+# ===========================
+firebase_admin==7.1.0        # Firebase Admin SDK for Firestore & Auth
+google-api-core==2.27.0      # Core Google API helpers
+google-auth==2.41.1          # Authentication for Google Cloud
+google-cloud-core==2.4.3     # Core utilities for Google Cloud clients
+google-cloud-firestore==2.21.0   # Firestore NoSQL database access
+google-cloud-storage==3.4.1      # Access to Google Cloud Storage buckets
+google-crc32c==1.7.1             # CRC32C checksum (used in GCP)
+google-resumable-media==2.7.2    # Large file upload/download for GCP
+googleapis-common-protos==1.71.0 # Protocol definitions for Google APIs
+proto-plus==1.26.1               # Enhanced protobuf handling
+protobuf==6.33.0                 # Protocol buffers serialization
+
+# ===========================
+# 🧩 AI, ML & TRANSFORMERS
+# ===========================
+huggingface-hub==0.35.3      # Access to Hugging Face model hub
+transformers==4.57.1         # Pretrained LLMs (BERT, GPT, Whisper, etc.)
+tokenizers==0.22.1           # Fast tokenization for transformers
+onnxruntime==1.23.2          # Run ONNX models locally (e.g. speech models)
+numpy==2.3.4                 # Numerical computing
+sympy==1.14.0                # Symbolic math
+mpmath==1.3.0                # Math utilities for symbolic computation
+safetensors==0.6.2           # Safe serialized model weights format
+regex==2025.10.23            # Enhanced regex, used by transformers
+tqdm==4.67.1                 # Progress bars for training/loading models
+
+# ===========================
+# 🧩 OPENAI / OBSERVABILITY
+# ===========================
+openai==2.6.0                # OpenAI API client
+opentelemetry-api==1.38.0    # Telemetry API
+opentelemetry-sdk==1.38.0    # Core tracing SDK
+opentelemetry-exporter-otlp==1.38.0           # Export telemetry via OTLP
+opentelemetry-proto==1.38.0                   # Protocol for telemetry data
+opentelemetry-semantic-conventions==0.59b0    # Semantic tracing conventions
+
+# ===========================
+# 🧮 CACHE / STORAGE / CONFIG
+# ===========================
+CacheControl==0.14.3         # Caching layer for requests
+cachetools==6.2.1            # TTL-based cache utilities
+msgpack==1.1.2               # Binary serialization format
+filelock==3.20.0             # File-based lock mechanism
+fsspec==2025.9.0             # Filesystem abstraction (local/cloud)
+packaging==25.0              # Version and dependency parsing
+PyYAML==6.0.3                # YAML config parser
+python-dotenv==1.1.1         # Load environment variables from .env files
+propcache==0.4.1             # Cached properties for Python classes
+
+# ===========================
+# 🧱 SYSTEM & LOGGING
+# ===========================
+click==8.3.0                 # Command-line interface helper
+colorama==0.4.6              # Colored terminal output
+coloredlogs==15.0.1          # Readable colored logs
+humanfriendly==10.0          # Human-readable logs/time formatting
+psutil==7.1.1                # System process and resource monitoring
+watchfiles==1.1.1            # Auto-reload files on change (for dev)
+
+# ===========================
+# 🧩 UTILS & TYPE HANDLING
+# ===========================
+annotated-types==0.7.0       # Extended type annotations
+eval_type_backport==0.2.2    # Typing evaluation for older Python
+pydantic==2.12.3             # Data validation models
+pydantic_core==2.41.4        # Core engine for pydantic
+typing-inspection==0.4.2     # Type introspection
+typing_extensions==4.15.0    # Extra typing utilities
+importlib_metadata==8.7.0    # Metadata access for installed packages
+zipp==3.23.0                 # Zip archive utilities for importlib
+
+# ===========================
+# 🌐 HTTP / REQUESTS HANDLING
+# ===========================
+requests==2.32.5             # HTTP client library
+urllib3==2.5.0               # Core dependency of requests
+charset-normalizer==3.4.4    # Encoding detection
+idna==3.11                   # International domain name support
+h11==0.16.0                  # HTTP/1.1 implementation (for httpx)
+h2==4.3.0                    # HTTP/2 implementation
+hpack==4.1.0                 # Header compression for HTTP/2
+hyperframe==6.1.0            # HTTP/2 framing layer
+httpcore==1.0.9              # Core transport for httpx
+httpx==0.28.1                # Modern async HTTP client
+
+# ===========================
+# 🔊 AUDIO / SPEECH PROCESSING
+# ===========================
+av==15.1.0                   # Audio/Video processing library
+sounddevice==0.5.3           # Capture/play audio from mic/speaker
+
+# ===========================
+# 🧰 MISC
+# ===========================
+distro==1.9.0                # Detect OS distribution
+docstring_parser==0.17.0     # Parse docstrings (for auto-docs)
+flatbuffers==25.9.23         # Serialization format used by ONNX
+Jinja2==3.1.6                # Template engine
+MarkupSafe==3.0.3            # HTML escaping for Jinja2
+prometheus_client==0.23.1    # Metrics for monitoring
+PyJWT==2.10.1                # JSON Web Token auth
+pyreadline3==3.5.4           # Windows readline support
+
